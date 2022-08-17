@@ -1,0 +1,11 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: |
+   cmake -S. -Bbuild 
+   cmake --build build
+  displayName: 'Command Line Script'
