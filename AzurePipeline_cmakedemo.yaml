@@ -9,3 +9,8 @@ steps:
    cmake -S. -Bbuild 
    cmake --build build
   displayName: 'Command Line Script'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
